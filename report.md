@@ -1,3 +1,16 @@
+## i ne pomnu kakai rabota
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/1a32149e-6f7e-4e41-828e-12a11e045b37)
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/fe1418f4-96c5-4847-8655-63a803e40c38)
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/0d57fd42-bf14-499f-a838-5836004178e9)
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/83c42d07-f9d4-4f8e-97cf-66da778bc5cf)
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/4035844e-6971-4100-867e-fab3608c3966)
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/36d3c60b-0df6-414f-ac98-74904f1221d0)
+
+
+
+
+
+
 ## 26.09.23
 --1--
 ```sql
