@@ -38,3 +38,11 @@ where c.courseid = studentcourses.courseid)
 from courses c;
 ```
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/d0eedd30-b64b-4c9f-9f15-bd37430b66df)
+
+--6--
+```sql
+select avg(age) 
+as avg_age 
+from students;
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/aca7b15f-d034-43bb-95cc-9f226618377b)
