@@ -56,3 +56,11 @@ not in (select studentid from studentcourses);
 ```
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/2c8e0c4a-e132-4c38-8712-fbe8e7625380)
 
+--8--
+```sql
+select coursename, (select count(studentid) 
+from studentcourses 
+where c.courseid = studentcourses.courseid) 
+from courses c;
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/41e01334-40d5-40e0-996c-1f99cde1936d)
