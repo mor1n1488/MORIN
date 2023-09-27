@@ -21,3 +21,11 @@ join studentcourses on studentcourses.studentid = students.studentid
 where courseid = (select courseid from courses where coursename = 'Математика');
 ```
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/84f97b8a-5c6f-4649-8f34-48543efee0de)
+
+--4--
+```sql
+select firstname, lastname from students
+join studentcourses on studentcourses.studentid = students.studentid
+where courseid = (select courseid from courses where coursename = 'История') and age = 20;
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/e9b0091b-f2d6-4359-ad38-e420f0309037)
