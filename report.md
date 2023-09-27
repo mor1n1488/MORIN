@@ -46,3 +46,13 @@ as avg_age
 from students;
 ```
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/aca7b15f-d034-43bb-95cc-9f226618377b)
+
+--7--
+```sql
+select firstname, lastname,
+studentid from students
+where studentid 
+not in (select studentid from studentcourses);
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/2c8e0c4a-e132-4c38-8712-fbe8e7625380)
+
