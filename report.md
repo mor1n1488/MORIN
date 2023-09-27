@@ -7,7 +7,6 @@ where age > 21;
 ```
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/83f68ef0-30e8-4689-95a2-cbec7e028df7)
 
-
 --2--
 ```sql
 select coursename from courses;
@@ -29,3 +28,12 @@ join studentcourses on studentcourses.studentid = students.studentid
 where courseid = (select courseid from courses where coursename = 'История') and age = 20;
 ```
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/e9b0091b-f2d6-4359-ad38-e420f0309037)
+
+--5--
+```sql
+select coursename, 
+(select count(studentid) 
+from studentcourses 
+where c.courseid = studentcourses.courseid) 
+from courses c;
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/d0eedd30-b64b-4c9f-9f15-bd37430b66df)
