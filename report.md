@@ -92,3 +92,59 @@ where courseid = (select courseid from courses where coursename = 'Биолог�
 ```
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/329a318b-de02-46be-8e0e-95a0c9c45e9c)
 
+
+## непомню.09.23
+
+--1--
+```sql
+SELECT * FROM person, pizzeria
+ORDER BY person.id, pizzeria.id
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/852f6dcd-ded5-4d15-916f-f598dd70adfb)
+
+--2--
+```sql
+SELECT person_visits.visit_date AS action_date, person.name
+FROM person_visits, person
+WHERE person_visits.visit_date
+IN (SELECT order_date FROM person_order)
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/75123a0c-bdfc-4969-b574-05ba7caeb7d8)
+
+--3--
+```sql
+SELECT order_date, (person.name  ' (age: '  person.age || ')') AS person_info
+FROM person_order
+JOIN person
+ON person_order.person_id = person.id
+ORDER BY order_date, person_info
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/5bdecffe-798f-4985-b36d-4984dc783188)
+
+--4--
+```sql
+SELECT order_date, (person.name  ' (age: '  person.age || ')') AS person_info FROM person_order
+NATURAL JOIN person
+ORDER BY order_date, person_info
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/850e51d8-2633-4b22-9b12-814db5cc630c)
+
+--5--
+```sql
+SELECT pizzeria.name
+FROM pizzeria
+WHERE pizzeria.id
+NOT IN (SELECT pizzeria_id FROM person_visits);
+SELECT pizzeria.name
+FROM pizzeria
+WHERE NOT EXISTS (SELECT pizzeria_id FROM person_visits WHERE pizzeria_id = pizzeria.id);
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/701b6c09-2fcf-4ad4-8c10-0dc2f79e6c8b)
+
+--6--
+```sql
+SELECT person.name AS person_name, menu.pizza_name, pizzeria.name AS pizzeria_name FROM person, pizzeria
+JOIN menu ON pizzeria.id = menu.pizzeria_id
+ORDER BY person_name, menu.pizza_name, pizzeria_name;
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/c5efde12-5df2-4fb7-b999-64fc3c7878cc)
