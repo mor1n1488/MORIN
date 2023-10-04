@@ -1,4 +1,4 @@
-## i ne pomnu kakai rabota
+## честноне помнюкакая это работа.09.23
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/1a32149e-6f7e-4e41-828e-12a11e045b37)
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/fe1418f4-96c5-4847-8655-63a803e40c38)
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/0d57fd42-bf14-499f-a838-5836004178e9)
@@ -93,7 +93,7 @@ where courseid = (select courseid from courses where coursename = 'Биолог�
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/329a318b-de02-46be-8e0e-95a0c9c45e9c)
 
 
-## непомню.09.23
+## к сожалению не помню.09.23
 
 --1--
 ```sql
