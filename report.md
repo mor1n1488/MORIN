@@ -148,3 +148,22 @@ JOIN menu ON pizzeria.id = menu.pizzeria_id
 ORDER BY person_name, menu.pizza_name, pizzeria_name;
 ```
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/c5efde12-5df2-4fb7-b999-64fc3c7878cc)
+
+
+## задание 4 13.09.23
+```sql
+SELECT "id", "pizza_name" FROM "menu" UNION
+SELECT "id", "name" FROM "person"
+ORDER BY "id", "pizza_name";
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/aba4751f-f470-4e43-8ba3-bb56c35c0bd6)
+
+```sql
+select "pizza_name" FROM "menu" union 
+select "name" from "person"
+order by "pizza_name";
+```
+
+
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/2665c5a3-5203-4fe7-bc66-4c39ab6078f9)
+
