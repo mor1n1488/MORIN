@@ -153,9 +153,9 @@ ORDER BY "id", "pizza_name";
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/aba4751f-f470-4e43-8ba3-bb56c35c0bd6)
 
 ```sql
-select "pizza_name" FROM "menu" union 
-select "name" from "person"
-order by "pizza_name";
+SELECT "pizza_name" FROM "menu" UNION
+SELECT "name" FROM "person"
+PRDER BY "pizza_name";
 ```
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/2665c5a3-5203-4fe7-bc66-4c39ab6078f9)
 
