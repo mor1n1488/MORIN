@@ -163,7 +163,77 @@ select "pizza_name" FROM "menu" union
 select "name" from "person"
 order by "pizza_name";
 ```
-
-
 ![image](https://github.com/mor1n1488/MORIN/assets/144114975/2665c5a3-5203-4fe7-bc66-4c39ab6078f9)
+
+
+
+
+
+## Задание 11.10 (17.10)
+
+--Exercise 00--
+```sql
+CREATE INDEX idx_menu_pizzeria_id ON menu(pizzeria_id);
+CREATE INDEX idx_person_order_person_id ON person_order(person_id);
+CREATE INDEX idx_person_order_menu_id ON person_order(menu_id);
+CREATE INDEX idx_person_visits_person_id ON person_visits(person_id);
+CREATE INDEX idx_person_visits_pizzeria_id ON person_visits(pizzeria_id);
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/ea87f821-ea14-467b-b68b-a512d87f622a)
+
+
+--Exercise 01--
+```sql
+SET enable_seqscan = OFF;
+EXPLAIN ANALYZE SELECT pizza_name, pizzeria.name AS pizzeria_name FROM menu, pizzeria
+WHERE menu.pizzeria_id = pizzeria.id
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/3a1dd5db-d9ae-4e90-93ae-010ad87f4cb4)
+
+
+--Exercise 02--
+```sql
+CREATE INDEX idx_person_name ON person(name);
+EXPLAIN ANALYZE SELECT UPPER(name) FROM person;
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/3bafa71a-fa86-4307-a44c-2b72ab03d068)
+
+
+--Exercise 03--
+```sql
+CREATE INDEX idx_person_order_multi ON person_order(person_id, menu_id);
+EXPLAIN ANALYZE SELECT person_id, menu_id,order_date FROM person_order
+WHERE person_id = 8 AND menu_id = 19;
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/7873d0d9-6f64-45a0-8265-69238709fc35)
+
+
+--Exercise 04--
+```sql
+CREATE UNIQUE INDEX idx_menu_unique ON menu(pizzeria_id, pizza_name);
+EXPLAIN ANALYZE SELECT pizzeria_id, pizza_name FROM menu
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/5a377103-4834-4603-97e9-a04ce948135b)
+
+
+--Exercise 05--
+```sql
+CREATE UNIQUE INDEX idx_person_order_order_date ON person_order(person_id, menu_id)
+WHERE order_date = '2022-01-01';
+EXPLAIN ANALYZE SELECT person_id, menu_id FROM person_order
+WHERE order_date = '2022-01-01'
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/64ed5e25-0652-4e98-8d38-3c10b0c269b9)
+
+
+--Exercise 06--
+```sql
+CREATE INDEX idx_1 ON pizzeria(id, rating);
+EXPLAIN ANALYZE SELECT
+  m.pizza_name AS pizza_name,
+  max(rating) OVER (PARTITION BY rating ORDER BY rating ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS k
+FROM  menu m INNER JOIN pizzeria pz ON m.pizzeria_id = pz.id
+ORDER BY 1,2;
+```
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/b03d8a7e-ac1b-449b-bf6a-50a288768e5c)
 
