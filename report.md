@@ -238,4 +238,5 @@ GROUP BY cus.first_name, cus.last_name, ord.order_date
 HAVING COUNT(*) >= 2 AND ord.order_date BETWEEN '2023-07-17' AND '2023-10-17'
 ORDER BY 1, 2
 ```
-![image](https://github.com/mor1n1488/MORIN/assets/144114975/6fb62eed-949e-4d66-8aa3-d9e8bdb17834)
+![image](https://github.com/mor1n1488/MORIN/assets/144114975/ddf4637e-b097-42d1-9cf2-ea242b572357)
+
