@@ -249,7 +249,7 @@ WHERE price >= 50
 GROUP BY prd.category
 ORDER BY 2
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/0e293520-18b5-41dd-92a4-7fd76dc2b22b)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/0e293520-18b5-41dd-92a4-7fd76dc2b22b)
 
 --3--
 ```sql
@@ -269,7 +269,7 @@ JOIN avg_sum asum ON asum.customer_id = cus.customer_id
 GROUP BY cus.first_name, cus.last_name, cus.email, scus.summa
 HAVING scus.summa > AVG(asum.summa)
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/b776ae03-f9a2-4a1c-b7e5-481d97b1abbe)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/b776ae03-f9a2-4a1c-b7e5-481d97b1abbe)
 
 --4--
 ```sql
@@ -285,7 +285,7 @@ JOIN sum_price spr ON spr.customer_id = cus.customer_id
 JOIN products prd ON prd.product_id = spr.product_id
 WHERE category != 'Electronics'
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/28270a27-2eac-48fa-b33b-08b022b054cf)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/28270a27-2eac-48fa-b33b-08b022b054cf)
 
 --5--
 --6--
@@ -304,7 +304,7 @@ JOIN customers cus ON cus.customer_id = mro.customer_id
 GROUP BY 1, 2
 HAVING MAX(mro.order_range) = (SELECT MAX(mro.order_range) FROM max_range_order mro)
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/309f6aa7-090e-4f85-96a3-831630f73463)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/309f6aa7-090e-4f85-96a3-831630f73463)
 
 --7--
 ```sql
@@ -312,7 +312,7 @@ SELECT cus.first_name, cus.last_name FROM customers cus
 LEFT JOIN orders ord ON ord.customer_id = cus.customer_id
 WHERE ord.order_date BETWEEN '2023-08-23' AND '2023-10-23'
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/8018f072-ded5-45f1-82d4-167a1f358e8d)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/8018f072-ded5-45f1-82d4-167a1f358e8d)
 
 --8--
 ```sql
@@ -323,10 +323,10 @@ WHERE category = 'Clothing';
 SELECT * FROM products
 WHERE category = 'Clothing'
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/4d4d1cc1-a26c-4f00-8458-440b54a567e6)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/4d4d1cc1-a26c-4f00-8458-440b54a567e6)
 
 ## 01.11.23
-![image](https://github.com/paramka0/db_practice/assets/74873667/27e6cfcf-e1a1-40fb-9f53-3dca7c9ea320)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/27e6cfcf-e1a1-40fb-9f53-3dca7c9ea320)
 
 ```sql
 CREATE TABLE equipment (
@@ -500,7 +500,7 @@ LANGUAGE 'plpgsql';
 
 CREATE TRIGGER check_telephone BEFORE INSERT OR UPDATE ON client FOR EACH ROW EXECUTE FUNCTION validate_telephone();
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/20e63a38-2235-40cd-aafb-33b2b94e2b79)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/20e63a38-2235-40cd-aafb-33b2b94e2b79)
 
 -- Триггер 1: Проверка наличия заказа для каждого сотрудника, принимающего заказы --
 ```sql
@@ -522,7 +522,7 @@ AFTER INSERT OR UPDATE ON staff
 FOR EACH ROW
 EXECUTE FUNCTION check_order_exists();
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/b91c2bda-c1b2-4535-9997-133c9b72747a)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/b91c2bda-c1b2-4535-9997-133c9b72747a)
 
 -- Триггер 2: Проверка статуса заказа при обновлении --
 ```sql
@@ -544,7 +544,7 @@ BEFORE UPDATE ON order_
 FOR EACH ROW
 EXECUTE FUNCTION check_order_status();
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/c8aca933-98f5-4ef8-8965-3a0da149945b)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/c8aca933-98f5-4ef8-8965-3a0da149945b)
 
 
 -- Триггер 3: Установка кода выполнения при изменении статуса заказа --
@@ -573,10 +573,10 @@ FOR EACH ROW
 EXECUTE FUNCTION set_execution_code();
 ```
 - было -
-![image](https://github.com/paramka0/db_practice/assets/74873667/321b377d-7628-4677-b80d-01a999aef250)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/321b377d-7628-4677-b80d-01a999aef250)
 
 - стало -
-![image](https://github.com/paramka0/db_practice/assets/74873667/087df38a-a606-48da-bd08-f84b13295ead)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/087df38a-a606-48da-bd08-f84b13295ead)
 
 
 -- Триггер 4: Проверка даты принятия уволенного сотрудника --
@@ -599,6 +599,6 @@ BEFORE DELETE ON staff
 FOR EACH ROW
 EXECUTE FUNCTION check_date_accepted();
 ```
-![image](https://github.com/paramka0/db_practice/assets/74873667/5b057a6e-7cca-4f03-94ce-d52eaeefc236)
+![image](https://github.com/mor1n1488/MORIN/assets/74873667/5b057a6e-7cca-4f03-94ce-d52eaeefc236)
 
 
